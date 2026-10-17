@@ -8,3 +8,5 @@ Automation test scripts for the AttendX student attendance application.
 ## Run
 pip install selenium
 python login_test.py
+
+Maintained by: QA Team (3 engineers)
