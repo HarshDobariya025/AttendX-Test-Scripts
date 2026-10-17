@@ -15,8 +15,19 @@ class LoginTest(unittest.TestCase):
         d.find_element(By.ID, "loginBtn").click()
         self.assertIn("Dashboard", d.title)
 
+    def test_invalid_login(self):
+        d = self.driver
+        d.find_element(By.ID, "username").send_keys("teacher01")
+        d.find_element(By.ID, "password").send_keys("wrong")
+        d.find_element(By.ID, "loginBtn").click()
+        self.assertIn("Invalid credentials", d.page_source)
+
     def tearDown(self):
         self.driver.quit()
 
 if __name__ == "__main__":
     unittest.main()
+
+
+
+    
